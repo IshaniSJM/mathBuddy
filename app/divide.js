@@ -4,6 +4,15 @@ const option3 = document.getElementById("option3");
 
 const num1 = document.getElementById("num1");
 const num2 = document.getElementById("num2");
+
+const currentScore = document.getElementById("current-score");
+const timerDisplay = document.getElementById("timer");
+
+let answer = 0;
+let score = 0;
+let timeLeft = 60;
+let timer;
+
 /*
 const wAudio = document.getElementById("wrong");
 const cAudio = document.getElementById("correct");
@@ -62,13 +71,65 @@ function generateEqu()
     option3.innerHTML = switchAns[2];
 };
 
+function updateScore()
+{
+    currentScore.textContent = score;
+};
+
+function updateTimer()
+{
+    timerDisplay.textContent = timeLeft;
+};
+
+function updateTime()
+{
+    timeLeft--;
+    document.getElementById("timer").innerHTML = timeLeft;
+    if(timeLeft === 0)
+    {
+        alert("Time Is Up! Your Final Score Is " + score + ".");
+        location.reload();
+    }
+};
+
+function startGame()
+{
+    score = 0;
+    timeLeft = 60;
+    generateEqu();
+    updateScore();
+    updateTimer();
+
+    clearInterval(timer);
+    timer = setInterval(function()
+    {
+        timeLeft--;
+        updateTimer();
+
+        if(timeLeft === 0)
+        {
+            clearInterval(timer);
+
+            window.scrollTo(0, 0);
+
+            let finalScore = score;
+            alert("Time Is Up! Your Final Score Is " + finalScore + ".");
+
+            location.reload();
+        }
+    }, 1000);
+};
+
 generateEqu();
+startGame();
 
 option1.addEventListener("click", function()
 {
     if(option1.innerHTML == answer)
     {
+        score++;
         generateEqu();
+        updateScore();
         var audio = new Audio("audios/correct.mp3");
         audio.play();
     }
@@ -83,7 +144,9 @@ option2.addEventListener("click", function()
 {
     if(option2.innerHTML == answer)
     {
+        score++;
         generateEqu();
+        updateScore();
         var audio = new Audio("audios/correct.mp3");
         audio.play();
     }
@@ -98,7 +161,9 @@ option3.addEventListener("click", function()
 {
     if(option3.innerHTML == answer)
     {
+        score++;
         generateEqu();
+        updateScore();
         var audio = new Audio("audios/correct.mp3");
         audio.play();
     }

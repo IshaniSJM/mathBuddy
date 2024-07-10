@@ -2,7 +2,7 @@
 {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Luckiest Guy', cursive;
 }
 
 body
@@ -40,7 +40,7 @@ body
 
 .container a
 {
-    padding: 10px;
+    padding: 20px;
     text-decoration: none;
     color: white;
 }
@@ -57,7 +57,6 @@ body
 {
     display: grid;
     grid-template-columns: 82% 18%;
-    height: 85vh;
 }
 
 .equation
@@ -92,7 +91,6 @@ body
     margin-top: 10px;
     text-align: center;
     width: 100%;
-    height: 27.3vh;
 }
 
 /*
@@ -136,4 +134,24 @@ body
 {
     color:darkorange ;
     background-color: white;
+}
+
+#score-container,
+#timer-container
+{
+    margin-top: 5%;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#current-score
+{
+    font-size: 70px;
+}
+
+#timer
+{
+    color: red;
+    font-size: 60px;
+    font-weight: bold;
 }

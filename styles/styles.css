@@ -2,7 +2,7 @@
 {
     margin: 0;
     padding: 0;
-    font-family: 'Luckiest Guy', cursive;
+    font-family: BlinkMacSystemFont;
 }
 
 body
@@ -57,6 +57,7 @@ body
 {
     display: grid;
     grid-template-columns: 82% 18%;
+    /* grid-template-rows: 70% 30%; */
 }
 
 .equation
@@ -90,7 +91,7 @@ body
     border-radius: 5px;
     margin-top: 10px;
     text-align: center;
-    width: 100%;
+    /* width: 100%; */
 }
 
 /*
@@ -139,7 +140,7 @@ body
 #score-container,
 #timer-container
 {
-    margin-top: 5%;
+    /* margin-top: 10%; */
     font-size: 40px;
     font-weight: bold;
 }

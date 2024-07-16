@@ -26,17 +26,16 @@ function randNum(num)
 function generateEqu()
 {
     /* ---- real answer ---- */
-    let rnum1;
     let rnum2;
 
     do
     {
-        rnum1 = randNum(12);
         rnum2 = randNum(12);
+        answer = randNum(12);
     }
-    while((rnum1 === 0 || rnum2 === 0) || (rnum1 === 0 && rnum2 === 0))
+    while((answer === 0 || rnum2 === 0) || (answer === 0 && rnum2 === 0))
 
-    answer = rnum1 / rnum2;
+    let rnum1 = rnum2 * answer;
 
     /* ---- wrong answers generator ---- */
     let fakeAns1;
